@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata>
+	<MetadataVersion>3.0.0.0</MetadataVersion>
+	<FwFamily>U21</FwFamily>
+	<BiosName>U21</BiosName>
+	<Date>2023-07-19</Date>
+	<FwVersion>1A.1B.0.59</FwVersion>
+	<FwVersionRegionB>0.0.0.0</FwVersionRegionB>
+	<Version>1A.1B.0.59</Version>
+	<VersionRegionB>0.0.0.0</VersionRegionB>
+	<BiosStartInFullRomImage>C00000</BiosStartInFullRomImage>
+	<BiosSizeInFullRomImage>1400000</BiosSizeInFullRomImage>
+	<SignedKbc>Yes</SignedKbc>
+	<GbeAddress>FE001000</GbeAddress>
+	<GbeLength>2000</GbeLength>
+	<MicrocodePatchAddress>FFFFFFFF</MicrocodePatchAddress>
+	<MicrocodePatchLength>0</MicrocodePatchLength>
+	<IsSureStart>Yes</IsSureStart>
+	<IsNetClone>No</IsNetClone>
+	<OdmMfgAdaptiveMode>0</OdmMfgAdaptiveMode>
+	<FFedOutRegions>
+		<Address>
+			<Offset>
+				<Name>PcdFlashNvStorageVariableOffset</Name>
+				<Value>DA7000</Value>
+			</Offset>
+			<Size>
+				<Name>PcdFlashNvStorageVariableSize</Name>
+				<Value>80000</Value>
+			</Size>
+		</Address>
+		<Address>
+			<Offset>
+				<Name>PcdFlashElectronicLabelFullPicOffset</Name>
+				<Value>D64000</Value>
+			</Offset>
+			<Size>
+				<Name>PcdFlashElectronicLabelFullPicSize</Name>
+				<Value>32000</Value>
+			</Size>
+		</Address>
+		<Address>
+			<Offset>
+				<Name>PcdFlashCustomLogoOffset</Name>
+				<Value>D5C000</Value>
+			</Offset>
+			<Size>
+				<Name>PcdFlashCustomLogoSize</Name>
+				<Value>8000</Value>
+			</Size>
+		</Address>
+	</FFedOutRegions>
+	<VersionBlocks></VersionBlocks>
+	<Pcd>
+		<PcdFlashNvStorageVariableBase>FF9A7000</PcdFlashNvStorageVariableBase>
+		<PcdFlashNvStorageVariableSize>3E000</PcdFlashNvStorageVariableSize>
+		<PcdFlashNvStorageFtwWorkingBase>FF9E5000</PcdFlashNvStorageFtwWorkingBase>
+		<PcdFlashNvStorageFtwWorkingSize>2000</PcdFlashNvStorageFtwWorkingSize>
+		<PcdFlashNvStorageFtwSpareBase>FF9E7000</PcdFlashNvStorageFtwSpareBase>
+		<PcdFlashNvStorageFtwSpareSize>40000</PcdFlashNvStorageFtwSpareSize>
+		<PcdFlashAreaBaseAddress>FEC00000</PcdFlashAreaBaseAddress>
+		<PcdFlashPartSize>2000000</PcdFlashPartSize>
+		<PcdFlashAreaSize>1400000</PcdFlashAreaSize>
+		<PcdFlashFvSecBase>FFFFE000</PcdFlashFvSecBase>
+		<PcdFlashFvSecSize>2000</PcdFlashFvSecSize>
+		<PcdFlashFvRecoveryBase>FFE80000</PcdFlashFvRecoveryBase>
+		<PcdFlashFvRecoverySize>17E000</PcdFlashFvRecoverySize>
+		<PcdFlashFvRecoveryRelocBase>FFA28000</PcdFlashFvRecoveryRelocBase>
+		<PcdFlashFvRecoveryRelocSize>0</PcdFlashFvRecoveryRelocSize>
+		<PcdFlashHpKbcBase>FFBC0000</PcdFlashHpKbcBase>
+		<PcdFlashHpKbcSize>80000</PcdFlashHpKbcSize>
+		<PcdFlashBiosAcBase>FFC40000</PcdFlashBiosAcBase>
+		<PcdFlashBiosAcSize>40000</PcdFlashBiosAcSize>
+		<PcdFlashFvRecoveryRegionHeaderBase>FFA27000</PcdFlashFvRecoveryRegionHeaderBase>
+		<PcdFlashFvRecoveryRegionHeaderSize>1000</PcdFlashFvRecoveryRegionHeaderSize>
+		<PcdFlashFitTableFvBase>FFBBF000</PcdFlashFitTableFvBase>
+		<PcdFlashFitTableFvSize>1000</PcdFlashFitTableFvSize>
+		<PcdFlashFvMainBase>FEC01000</PcdFlashFvMainBase>
+		<PcdFlashFvMainSize>D56000</PcdFlashFvMainSize>
+		<PcdFlashFvMainRegionHeaderBase>FEC00000</PcdFlashFvMainRegionHeaderBase>
+		<PcdFlashFvMainRegionHeaderSize>1000</PcdFlashFvMainRegionHeaderSize>
+		<PcdFlashCustomLogoBase>FF95C000</PcdFlashCustomLogoBase>
+		<PcdFlashCustomLogoSize>8000</PcdFlashCustomLogoSize>
+		<PcdFlashPeiACodeBase>FFA28000</PcdFlashPeiACodeBase>
+		<PcdFlashPeiACodeSize>5D6000</PcdFlashPeiACodeSize>
+		<PcdFlashPrvPartSize>2000000</PcdFlashPrvPartSize>
+		<PcdEcSioOffsetFromEndOfRegion>1000</PcdEcSioOffsetFromEndOfRegion>
+		<PcdFlashElectronicLabelFullPicBase>FF964000</PcdFlashElectronicLabelFullPicBase>
+		<PcdFlashElectronicLabelFullPicSize>32000</PcdFlashElectronicLabelFullPicSize>
+		<PcdFlashFvMicrocodeBase>FFA28000</PcdFlashFvMicrocodeBase>
+		<PcdFlashFvMicrocodeSize>197000</PcdFlashFvMicrocodeSize>
+		<PcdFspBase>FFC80000</PcdFspBase>
+		<PcdFspSize>200000</PcdFspSize>
+		<PcdFspSBase>FFC80000</PcdFspSBase>
+		<PcdFspSSize>5F000</PcdFspSSize>
+		<PcdFspMBase>FFCDF000</PcdFspMBase>
+		<PcdFspMSize>0</PcdFspMSize>
+		<PcdFspTBase>FFD9F000</PcdFspTBase>
+		<PcdFspTSize>0</PcdFspTSize>
+		<PcdMaxEcBaseFwLength>20000</PcdMaxEcBaseFwLength>
+		<PcdFlashFvSecOffset>13FE000</PcdFlashFvSecOffset>
+		<PcdFlashBiosAc2Offset>FFFFFFFF</PcdFlashBiosAc2Offset>
+		<PcdFlashBiosAc2Base>FFFFFFFF</PcdFlashBiosAc2Base>
+		<PcdFlashBiosAc2Size>0</PcdFlashBiosAc2Size>
+		<PcdFlashHpKbc2Offset>FFFFFFFF</PcdFlashHpKbc2Offset>
+		<PcdFlashHpKbc2Base>FFFFFFFF</PcdFlashHpKbc2Base>
+		<PcdFlashHpKbc2Size>0</PcdFlashHpKbc2Size>
+		<PcdFlashFvRecovery2RegionHeaderOffset>FFFFFFFF</PcdFlashFvRecovery2RegionHeaderOffset>
+		<PcdFlashFvRecovery2RegionHeaderBase>FFFFFFFF</PcdFlashFvRecovery2RegionHeaderBase>
+		<PcdFlashFvRecovery2RegionHeaderSize>0</PcdFlashFvRecovery2RegionHeaderSize>
+		<PcdFlashFvRecovery2Offset>FFFFFFFF</PcdFlashFvRecovery2Offset>
+		<PcdFlashFvRecovery2Base>FFFFFFFF</PcdFlashFvRecovery2Base>
+		<PcdFlashFvRecovery2Size>0</PcdFlashFvRecovery2Size>
+		<PcdFlashFvRecovery2RelocOffset>FFFFFFFF</PcdFlashFvRecovery2RelocOffset>
+		<PcdFlashFvRecovery2RelocBase>FFFFFFFF</PcdFlashFvRecovery2RelocBase>
+		<PcdFlashFvRecovery2RelocSize>0</PcdFlashFvRecovery2RelocSize>
+		<PcdFlashBiosAcOffset>1040000</PcdFlashBiosAcOffset>
+		<PcdFlashHpKbcOffset>FC0000</PcdFlashHpKbcOffset>
+		<PcdFlashFvRecoveryRegionHeaderOffset>E27000</PcdFlashFvRecoveryRegionHeaderOffset>
+		<PcdFlashFvRecoveryOffset>1280000</PcdFlashFvRecoveryOffset>
+		<PcdFlashFvRecoveryRelocOffset>E28000</PcdFlashFvRecoveryRelocOffset>
+		<PcdFlashMicrocodeFvOffset>FFFFFFFF</PcdFlashMicrocodeFvOffset>
+		<PcdFlashMicrocodeFvBase>FFA28000</PcdFlashMicrocodeFvBase>
+		<PcdFlashMicrocodeFvSize>197000</PcdFlashMicrocodeFvSize>
+		<PcdFlashFitTableFvOffset>FBF000</PcdFlashFitTableFvOffset>
+		<PcdFlashMicrocode2FvOffset>FFFFFFFF</PcdFlashMicrocode2FvOffset>
+		<PcdFlashMicrocode2FvBase>FFFFFFFF</PcdFlashMicrocode2FvBase>
+		<PcdFlashMicrocode2FvSize>0</PcdFlashMicrocode2FvSize>
+		<PcdFlashFitTable2FvOffset>FFFFFFFF</PcdFlashFitTable2FvOffset>
+		<PcdFlashFitTable2FvBase>FFFFFFFF</PcdFlashFitTable2FvBase>
+		<PcdFlashFitTable2FvSize>0</PcdFlashFitTable2FvSize>
+		<PcdFlashMicrocodePatchOffset>FFFFFFFF</PcdFlashMicrocodePatchOffset>
+		<PcdFlashMicrocodePatchBase>FFFFFFFF</PcdFlashMicrocodePatchBase>
+		<PcdFlashMicrocodePatchSize>0</PcdFlashMicrocodePatchSize>
+		<PcdFlashNvStorageFtwSpareOffset>DE7000</PcdFlashNvStorageFtwSpareOffset>
+		<PcdFlashNvStorageFtwWorkingOffset>DE5000</PcdFlashNvStorageFtwWorkingOffset>
+		<PcdFlashNvStorageVariableOffset>DA7000</PcdFlashNvStorageVariableOffset>
+		<PcdFlashFvMainRegionHeaderOffset>0</PcdFlashFvMainRegionHeaderOffset>
+		<PcdFlashFvMainOffset>1000</PcdFlashFvMainOffset>
+		<PcdFlashFvMain2Offset>FFFFFFFF</PcdFlashFvMain2Offset>
+		<PcdFlashFvMain2Base>FFFFFFFF</PcdFlashFvMain2Base>
+		<PcdFlashFvMain2Size>0</PcdFlashFvMain2Size>
+		<PcdFlashFvMain2RegionHeaderOffset>FFFFFFFF</PcdFlashFvMain2RegionHeaderOffset>
+		<PcdFlashFvMain2RegionHeaderBase>FFFFFFFF</PcdFlashFvMain2RegionHeaderBase>
+		<PcdFlashFvMain2RegionHeaderSize>0</PcdFlashFvMain2RegionHeaderSize>
+		<PcdFlashCustomLogoOffset>D5C000</PcdFlashCustomLogoOffset>
+		<PcdFlashUsbFirmwareOffset>FFFFFFFF</PcdFlashUsbFirmwareOffset>
+		<PcdFlashUsbFirmwareBase>FFFFFFFF</PcdFlashUsbFirmwareBase>
+		<PcdFlashUsbFirmwareSize>0</PcdFlashUsbFirmwareSize>
+		<PcdFlashUsbFirmwareLoaderOffset>FFFFFFFF</PcdFlashUsbFirmwareLoaderOffset>
+		<PcdFlashUsbFirmwareLoaderBase>FFFFFFFF</PcdFlashUsbFirmwareLoaderBase>
+		<PcdFlashUsbFirmwareLoaderSize>0</PcdFlashUsbFirmwareLoaderSize>
+		<PcdFlashFitOffset>FFFFFFFF</PcdFlashFitOffset>
+		<PcdFlashFitBase>FFFFFFFF</PcdFlashFitBase>
+		<PcdFlashFitSize>0</PcdFlashFitSize>
+		<PcdFlashElectronicLabelFullPicOffset>D64000</PcdFlashElectronicLabelFullPicOffset>
+		<PcdFlashAMDFWLoaderOffset>FFFFFFFF</PcdFlashAMDFWLoaderOffset>
+		<PcdFlashAMDFWLoaderBase>FFFFFFFF</PcdFlashAMDFWLoaderBase>
+		<PcdFlashAMDFWLoaderSize>0</PcdFlashAMDFWLoaderSize>
+		<PcdFlashPspNvRamS3Offset>FFFFFFFF</PcdFlashPspNvRamS3Offset>
+		<PcdFlashPspNvRamS3Base>FFFFFFFF</PcdFlashPspNvRamS3Base>
+		<PcdFlashPspNvRamS3Size>0</PcdFlashPspNvRamS3Size>
+		<PcdFlashPspNvRamOffset>FFFFFFFF</PcdFlashPspNvRamOffset>
+		<PcdFlashPspNvRamBase>FFFFFFFF</PcdFlashPspNvRamBase>
+		<PcdFlashPspNvRamSize>0</PcdFlashPspNvRamSize>
+		<PcdFlashBrPspFixedOffset>FFFFFFFF</PcdFlashBrPspFixedOffset>
+		<PcdFlashBrPspFixedBase>FFFFFFFF</PcdFlashBrPspFixedBase>
+		<PcdFlashBrPspFixedSize>0</PcdFlashBrPspFixedSize>
+		<PcdFlashBrPspUpdateableOffset>FFFFFFFF</PcdFlashBrPspUpdateableOffset>
+		<PcdFlashBrPspUpdateableBase>FFFFFFFF</PcdFlashBrPspUpdateableBase>
+		<PcdFlashBrPspUpdateableSize>0</PcdFlashBrPspUpdateableSize>
+		<PcdFlashStPspFixedOffset>FFFFFFFF</PcdFlashStPspFixedOffset>
+		<PcdFlashStPspFixedBase>FFFFFFFF</PcdFlashStPspFixedBase>
+		<PcdFlashStPspFixedSize>0</PcdFlashStPspFixedSize>
+		<PcdFlashStPspUpdateableOffset>FFFFFFFF</PcdFlashStPspUpdateableOffset>
+		<PcdFlashStPspUpdateableBase>FFFFFFFF</PcdFlashStPspUpdateableBase>
+		<PcdFlashStPspUpdateableSize>0</PcdFlashStPspUpdateableSize>
+		<PcdFlashPspFixedOffset>FFFFFFFF</PcdFlashPspFixedOffset>
+		<PcdFlashPspFixedBase>FFFFFFFF</PcdFlashPspFixedBase>
+		<PcdFlashPspFixedSize>0</PcdFlashPspFixedSize>
+		<PcdFlashPspUpdateableOffset>FFFFFFFF</PcdFlashPspUpdateableOffset>
+		<PcdFlashPspUpdateableBase>FFFFFFFF</PcdFlashPspUpdateableBase>
+		<PcdFlashPspUpdateableSize>0</PcdFlashPspUpdateableSize>
+		<PcdFlashZpPspDirsContiguousOffset>FFFFFFFF</PcdFlashZpPspDirsContiguousOffset>
+		<PcdFlashZpPspDirsContiguousBase>FFFFFFFF</PcdFlashZpPspDirsContiguousBase>
+		<PcdFlashZpPspDirsContiguousSize>0</PcdFlashZpPspDirsContiguousSize>
+		<PcdFlashZpBiosDirsContiguousOffset>FFFFFFFF</PcdFlashZpBiosDirsContiguousOffset>
+		<PcdFlashZpBiosDirsContiguousBase>FFFFFFFF</PcdFlashZpBiosDirsContiguousBase>
+		<PcdFlashZpBiosDirsContiguousSize>0</PcdFlashZpBiosDirsContiguousSize>
+		<PcdFlashPspDynamicRegion1Offset>FFFFFFFF</PcdFlashPspDynamicRegion1Offset>
+		<PcdFlashPspDynamicRegion1Base>FFFFFFFF</PcdFlashPspDynamicRegion1Base>
+		<PcdFlashPspDynamicRegion1Size>0</PcdFlashPspDynamicRegion1Size>
+		<PcdFlashPspDynamicRegion2Offset>FFFFFFFF</PcdFlashPspDynamicRegion2Offset>
+		<PcdFlashPspDynamicRegion2Base>FFFFFFFF</PcdFlashPspDynamicRegion2Base>
+		<PcdFlashPspDynamicRegion2Size>0</PcdFlashPspDynamicRegion2Size>
+		<PcdFlashPspDynamicRegion3Offset>FFFFFFFF</PcdFlashPspDynamicRegion3Offset>
+		<PcdFlashPspDynamicRegion3Base>FFFFFFFF</PcdFlashPspDynamicRegion3Base>
+		<PcdFlashPspDynamicRegion3Size>0</PcdFlashPspDynamicRegion3Size>
+		<PcdFlashPeiACodeOffset>E28000</PcdFlashPeiACodeOffset>
+		<PcdFlashPeiBCodeOffset>FFFFFFFF</PcdFlashPeiBCodeOffset>
+		<PcdFlashPeiBCodeBase>FFFFFFFF</PcdFlashPeiBCodeBase>
+		<PcdFlashPeiBCodeSize>0</PcdFlashPeiBCodeSize>
+	</Pcd>
+	<PeiA>
+		<BaseAddress>FFE80000</BaseAddress>
+		<Length>17E000</Length>
+		<StartingPoint>1280000</StartingPoint>
+		<MetadataBaseAddress>FFA27000</MetadataBaseAddress>
+		<MetadataLength>1000</MetadataLength>
+		<MetadataStartingPoint>E27000</MetadataStartingPoint>
+		<MetadataSignatureLength>180</MetadataSignatureLength>
+		<MetadataSignatureStartingPoint>E277EE</MetadataSignatureStartingPoint>
+		<HeaderSignatureLength>180</HeaderSignatureLength>
+		<HeaderSignatureStartingPoint>E2766E</HeaderSignatureStartingPoint>
+		<FlashCompleteFlag>
+			<WinPVT>
+				<Start>1A27000</Start>
+				<Size>4</Size>
+			</WinPVT>
+		</FlashCompleteFlag>
+		<SignatureStartingPoint>E27030</SignatureStartingPoint>
+		<SignatureLength>180</SignatureLength>
+		<MicrocodeAddress>FFA28000</MicrocodeAddress>
+		<MicrocodeLength>197000</MicrocodeLength>
+		<FitTableAddress>FFBBF000</FitTableAddress>
+		<FitTableLength>1000</FitTableLength>
+		<RelocationBaseAddress>FFA28000</RelocationBaseAddress>
+		<RelocationLength>0</RelocationLength>
+		<RelocationStartingPoint>E28000</RelocationStartingPoint>
+		<PeiACodeBase>FFA28000</PeiACodeBase>
+		<PeiACodeSize>5D6000</PeiACodeSize>
+		<SignedBaseAddress>FFA28000</SignedBaseAddress>
+		<SignedLength>5D6000</SignedLength>
+		<SignedStartingPoint>E28000</SignedStartingPoint>
+		<KbcBaseAddress>FFBC0000</KbcBaseAddress>
+		<KbcLength>80000</KbcLength>
+		<KbcStartingPoint>FC0000</KbcStartingPoint>
+		<EcHeaderStartingPoint>FC0000</EcHeaderStartingPoint>
+		<EcRegionSize>80000</EcRegionSize>
+		<BaseEcHeaderAddress>FFFFFFFF</BaseEcHeaderAddress>
+		<BaseEcHeaderOffset>FFFFFFFF</BaseEcHeaderOffset>
+		<BaseEcRegionSize>0</BaseEcRegionSize>
+		<FFedOutRegions>
+			<Address>
+				<Offset>
+					<Name>PcdFlashNvStorageVariableOffset</Name>
+					<Value>DA7000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashNvStorageVariableSize</Name>
+					<Value>80000</Value>
+				</Size>
+			</Address>
+			<Address>
+				<Offset>
+					<Name>PcdFlashElectronicLabelFullPicOffset</Name>
+					<Value>D64000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashElectronicLabelFullPicSize</Name>
+					<Value>32000</Value>
+				</Size>
+			</Address>
+			<Address>
+				<Offset>
+					<Name>PcdFlashCustomLogoOffset</Name>
+					<Value>D5C000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashCustomLogoSize</Name>
+					<Value>8000</Value>
+				</Size>
+			</Address>
+		</FFedOutRegions>
+		<KbcSignatureStartingPoint>FC030C</KbcSignatureStartingPoint>
+		<KbcSignatureLength>180</KbcSignatureLength>
+		<KbcHeaderLength>4D0</KbcHeaderLength>
+		<KbcHeaderSignatureStartingPoint>FC018C</KbcHeaderSignatureStartingPoint>
+		<KbcHeaderSignatureLength>180</KbcHeaderSignatureLength>
+		<KbcHeaderPkModulusStart>30</KbcHeaderPkModulusStart>
+		<KbcHeaderPkModulusEnd>1AF</KbcHeaderPkModulusEnd>
+		<KbcCodeLenLowByte>10</KbcCodeLenLowByte>
+		<KbcCodeLenHighByte>11</KbcCodeLenHighByte>
+		<KbcCodeLenMultiplier>40</KbcCodeLenMultiplier>
+		<NvRamBaseAddress>FF9A7000</NvRamBaseAddress>
+		<NvRamLength>80000</NvRamLength>
+		<NvRamStartingPoint>DA7000</NvRamStartingPoint>
+		<CustomLogoBaseAddress>FF95C000</CustomLogoBaseAddress>
+		<CustomLogoLength>8000</CustomLogoLength>
+		<CustomLogoStartingPoint>D5C000</CustomLogoStartingPoint>
+		<SecBaseAddress>FFFFE000</SecBaseAddress>
+		<SecLength>2000</SecLength>
+		<SecStartingPoint>13FE000</SecStartingPoint>
+	</PeiA>
+	<PeiB></PeiB>
+	<DxeA>
+		<BaseAddress>FEC01000</BaseAddress>
+		<Length>D56000</Length>
+		<StartingPoint>1000</StartingPoint>
+		<MetadataBaseAddress>FEC00000</MetadataBaseAddress>
+		<MetadataLength>1000</MetadataLength>
+		<MetadataStartingPoint>0</MetadataStartingPoint>
+		<MetadataSignatureLength>180</MetadataSignatureLength>
+		<MetadataSignatureStartingPoint>7EE</MetadataSignatureStartingPoint>
+		<HeaderSignatureLength>180</HeaderSignatureLength>
+		<HeaderSignatureStartingPoint>66E</HeaderSignatureStartingPoint>
+		<FlashCompleteFlag>
+			<WinPVT>
+				<Start>C00000</Start>
+				<Size>4</Size>
+			</WinPVT>
+		</FlashCompleteFlag>
+		<SignatureStartingPoint>30</SignatureStartingPoint>
+		<SignatureLength>180</SignatureLength>
+		<RelocationBaseAddress />
+		<RelocationLength />
+		<RelocationStartingPoint />
+		<SignedBaseAddress>FEC01000</SignedBaseAddress>
+		<SignedLength>6D2000</SignedLength>
+		<SignedStartingPoint>1000</SignedStartingPoint>
+		<KbcBaseAddress />
+		<KbcLength />
+		<KbcStartingPoint />
+		<KbcHeaderLength />
+		<KbcHeaderPkModulusStart />
+		<KbcHeaderPkModulusEnd />
+		<KbcCodeLenLowByte />
+		<KbcCodeLenHighByte />
+		<KbcCodeLenMultiplier />
+		<NvRamBaseAddress>FF9A7000</NvRamBaseAddress>
+		<NvRamLength>80000</NvRamLength>
+		<NvRamStartingPoint>DA7000</NvRamStartingPoint>
+		<ElectronicLabelAddress>FF964000</ElectronicLabelAddress>
+		<ElectronicLabelLength>32000</ElectronicLabelLength>
+		<ElectronicLabelStartingPoint>D64000</ElectronicLabelStartingPoint>
+		<PspNvRamS3Address>FFFFFFFF</PspNvRamS3Address>
+		<PspNvRamS3Length>0</PspNvRamS3Length>
+		<PspNvRamS3StartingPoint>FFFFFFFF</PspNvRamS3StartingPoint>
+		<PspNvRamAddress>FFFFFFFF</PspNvRamAddress>
+		<PspNvRamLength>0</PspNvRamLength>
+		<PspNvRamStartingPoint>FFFFFFFF</PspNvRamStartingPoint>
+		<PspFixedAddress>FFFFFFFF</PspFixedAddress>
+		<PspFixedLength>0</PspFixedLength>
+		<PspFixedStartingPoint>FFFFFFFF</PspFixedStartingPoint>
+		<PspUpdateableAddress>FFFFFFFF</PspUpdateableAddress>
+		<PspUpdateableLength>0</PspUpdateableLength>
+		<PspUpdateableStartingPoint>FFFFFFFF</PspUpdateableStartingPoint>
+		<CustomLogoBaseAddress>FF95C000</CustomLogoBaseAddress>
+		<CustomLogoLength>8000</CustomLogoLength>
+		<CustomLogoStartingPoint>D5C000</CustomLogoStartingPoint>
+		<UsbFirmwareBaseAddress>FFFFFFFF</UsbFirmwareBaseAddress>
+		<UsbFirmwareLength>0</UsbFirmwareLength>
+		<UsbFirmwareStartingPoint>FFFFFFFF</UsbFirmwareStartingPoint>
+		<FullBiosSignatureStartingPoint>96E</FullBiosSignatureStartingPoint>
+		<FullBiosSignatureLength>1000</FullBiosSignatureLength>
+		<FFedOutRegions>
+			<Address>
+				<Offset>
+					<Name>PcdFlashNvStorageVariableOffset</Name>
+					<Value>DA7000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashNvStorageVariableSize</Name>
+					<Value>80000</Value>
+				</Size>
+			</Address>
+			<Address>
+				<Offset>
+					<Name>PcdFlashElectronicLabelFullPicOffset</Name>
+					<Value>D64000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashElectronicLabelFullPicSize</Name>
+					<Value>32000</Value>
+				</Size>
+			</Address>
+			<Address>
+				<Offset>
+					<Name>PcdFlashCustomLogoOffset</Name>
+					<Value>D5C000</Value>
+				</Offset>
+				<Size>
+					<Name>PcdFlashCustomLogoSize</Name>
+					<Value>8000</Value>
+				</Size>
+			</Address>
+		</FFedOutRegions>
+	</DxeA>
+	<DxeB></DxeB>
+	<EcSio>
+		<EcSioType>SIO21 (NUVO)</EcSioType>
+		<Anchor Offset="0" Size="4">16788761</Anchor>
+		<SPIMaxClock Offset="4" Size="1">CC</SPIMaxClock>
+		<SPIFlsReadMode Offset="5" Size="1">CC</SPIFlsReadMode>
+		<BlockedKeys Offset="6" Size="4">0</BlockedKeys>
+		<HeaderVersion Offset="A" Size="1">0</HeaderVersion>
+		<HeaderReserved Offset="B" Size="1">0</HeaderReserved>
+		<PublicKeyK2 Offset="C" Size="384" />
+		<FwImageHeaderSig Offset="18C" Size="384" />
+		<RuntimeFwSig Offset="30C" Size="384" />
+		<FwVersion Offset="8" Size="4">D20305</FwVersion>
+		<FwLoadAddress Offset="C" Size="4">10068000</FwLoadAddress>
+		<EntryPoint Offset="10" Size="4">10068000</EntryPoint>
+		<FWL Offset="498" Size="4">48598</FWL>
+		<SCTPL Offset="49C" Size="4">2D9C</SCTPL>
+		<CTL Offset="4A0" Size="4">1C</CTL>
+		<FPTL Offset="4A4" Size="4">0</FPTL>
+		<SureStartVendor Offset="4A8" Size="1">0</SureStartVendor>
+		<PrivateSpiRomSize Offset="4A9" Size="1">20</PrivateSpiRomSize>
+		<SharedSpiRomSize Offset="4AA" Size="1">20</SharedSpiRomSize>
+		<RamCodeOnlyStart>
+			<Index Offset="4AC" Size="4">0</Index>
+			<Length Offset="4B0" Size="4">0</Length>
+		</RamCodeOnlyStart>
+		<RamDataOnlyStart>
+			<Index Offset="4B4" Size="4">0</Index>
+			<Length Offset="4B8" Size="4">0</Length>
+		</RamDataOnlyStart>
+		<Reserved Offset="4BC" Size="20" />
+		<FirmwareImage Offset="4D0" Size="296344" />
+		<SioConfigTablePtr Offset="48A68" Size="11676" />
+		<ConfigTables Offset="4B804" Size="28" />
+		<FlashParamTables Offset="4B820" Size="0" />
+	</EcSio>
+</Metadata>
