@@ -13,10 +13,10 @@
 #  (1) Now can find feature-name in tag of first layer and its text is the value we want
 #  (2) Now can find feature-name in value of "name" tag of forth or fifth layers 
 #      and the value of the tag "value" of the same layer is what we want
-#  (3) *FF* User can input {Platfrom} or press enter to use .xml witch first finded
+#  (3) User can choice number or press enter to use .xml witch first finded
 # 3.Count the value and print it to double check
 # 4.Read write_data.bin which will replace 
-#  (1) *FF* User can input 1 to choice other write_data_factory_default.bin
+#  (1) User can input 1 to choice other write_data_factory_default.bin
 #      otherwise default write_data.bin
 #  (2) *FF* User can input manually to modify CT/MAC/ForceNetBoot/counter/timer
 #      otherwise default 11002200...EE00/FF..FF/1/5/2
@@ -36,12 +36,22 @@
 # NOTICE!! : in xml, <PCD> Block Skip
 #############################
 ### Get and Count location
-import xml.etree.ElementTree as ET
-import shutil
-import sys
+import xml.etree.ElementTree as ET          # xml
+import shutil                               # copy file
+import sys                                  # exit
+#import os                                   # operate file
+#import re                                   # find file
+from choce_file import *                    # will import os/re
+from modifyBin import *
+
+# That user chose .xml
+XMLFileName = Choce_file("xml")
+if not XMLFileName : sys.exit()
+#print(XMLFileName)
+
 ## Get target
 TargetFileName = "target.txt"
-XMLFileName = "U21.xml"
+#XMLFileName = "U21.xml"
 #maybe user input filename
 targetName =[]
 targetAct=[]
@@ -116,8 +126,25 @@ else :
 print("Taget location at :" , hex(location))
 
 ### Mod bin
-BinaryFileName = "U21_892627_32.bin"
-WriteDataFileName = "Write_Data.bin"
+# That user chose {written}.bin
+#BinaryFileName = "U21_892627_32.bin"
+BinaryFileName = Choce_file("bin")
+if not BinaryFileName : sys.exit()
+#print(BinaryFileName)
+
+# That user chose {written}.bin
+#WriteDataFileName = "write_Data.bin"
+WriteDataFileString = "Input 1 to use write_data_factory_default.bin \
+                       or press enter to use write_data.bin which can modify." 
+WriteDataFileName = input(WriteDataFileString) or 0
+while WriteDataFileName not in {0,1} :
+    print("Not legal input !!!")
+    writeDataFileName = input(WriteDataFileString) or 0
+writeDataFileName = "write_data.bin" if writeDataFileName == 0 else "write_data_factory_default"
+
+if writeDataFileName == "write_data.bin" :
+    ModifyWriteBin(WriteDataFileName)
+
 #maybe user input BinaryFileName
 with open(WriteDataFileName, "rb") as writeData :
     print("Opened Input-Data name : " + WriteDataFileName )

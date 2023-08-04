@@ -11,12 +11,13 @@ modify bin with location recorded by xml
 2. Find feature-name which user set in {Platform}.xml
    1. Now can find feature-name in tag of first layer and its text is the value we want
    2. Now can find feature-name in value of "name" tag of forth or fifth layers and the value of the tag "value" of the same layer is what we want
-   3. ***FF*** User can input {Platfrom} or press enter to use .xml witch first finded
+   3. User can choice number or press enter to use .xml witch first finded
 
 3. Count the value and print it to double check
 
 4. Read write_data.bin which will replace 
-   1. ***FF*** User can input 1 to choice other write_data_factory_default.bin otherwise default write_data.bin
+   1. User can input 1 to choice other write_data_factory_default.bin
+      otherwise default write_data.bin
    2. ***FF*** User can input manually to modify CT/MAC/ForceNetBoot/counter/timer otherwise default 11002200...EE00/FF..FF/1/5/2
    3. Format : \x00\x00\..\x07 in one line
    4. ***FF*** Support other input format
