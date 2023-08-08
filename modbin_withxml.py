@@ -18,10 +18,12 @@
 # 4.Read write_data.bin which will replace 
 #  (1) User can input 1 to choice other write_data_factory_default.bin
 #      otherwise default write_data.bin
-#  (2) *FF* User can input manually to modify CT/MAC/ForceNetBoot/counter/timer
-#      otherwise default 11002200...EE00/FF..FF/1/5/2
-#  (3) Format : \x00\x00\..\x07 in one line
-#  (4) *FF* Support other input format
+#  (2) User can input manually to modify when execution CT/MAC/ForceNetBoot/counter/timer
+#      otherwise default 11002200...EE00/FF..FF/1/5/2 
+#  (3) User can also modify by command line use parameters
+#  (4) Format for 4-2: \x00\x00\..\x07 in one line
+#  (5) Format for 4-3: number of non-spaced strings from 0-9 and A-F
+#  (6) *FF* Support other input format
 # 5.Write date to {Platform_version}.bin
 #  (1)Copy {Platform_version}.bin and rename {Platform_version}_ori.bin
 #   progrm will modify in {Platform_version}.bin
@@ -33,19 +35,35 @@
 # https://github.com/yishawnpeng/modBIN_withXML
 #
 #############################
+# In write_data.bin :
+#         CT start at : 204
+#            end   at : 234
+#         MAC start at : 234
+#             end   at : 240
+#         BootCounter start at : 243
+#                     end   at : 245
+#         Period start at : 245
+#                end   at : 247
+#############################
 # NOTICE!! : in xml, <PCD> Block Skip
 #############################
 ### Get and Count location
-import xml.etree.ElementTree as ET          # xml
+#import xml.etree.ElementTree as ET          # xml
 import shutil                               # copy file
 import sys                                  # exit
 #import os                                   # operate file
 #import re                                   # find file
-from choce_file import *                    # will import os/re
+from getXMLInfo import *                   # will import ET
+from choceFile import *                    # will import os/re
+from argParse import *
 from modifyBin import *
 
+#argumentDict={"MAC":None,"SBCT":None,"Counter":None,"Period":None} ## defined in argParse.py
+legalParmeter = argParse_contant(argumentDict)
+if not legalParmeter : sys.exit()
+
 # That user chose .xml
-XMLFileName = Choce_file("xml")
+XMLFileName = ChoceFile("xml")
 if not XMLFileName : sys.exit()
 #print(XMLFileName)
 
@@ -66,58 +84,8 @@ with open(TargetFileName, "r") as targetFile :
 ## Get xml info
 tree = ET.parse(XMLFileName)
 print("Opened XML name : " + XMLFileName )
-root = tree.getroot()
-targetValue=[]
-for i in targetName :
-    try:
-        temp = root.find(i).text
-        targetValue.append(temp)
-    except Exception as maybeInSomones_AddressOffset :
-        finded = False
-        for j in root :
-            for k in j :
-                if k.tag == "Address" and not finded :
-                    #print(k ,"k yes")
-                    if k.find("Offset").find("Name").text == i:
-                        #print(k.find("Offset").find("Value").text)
-                        targetValue.append(k.find("Offset").find("Value").text)
-                        finded = True
-                elif not finded : # more deep like PeiA / DxeA
-                    for l in k :
-                        if l.tag == "Address" :
-                            if l.find("Offset").find("Name").text == i :
-                                targetValue.append(l.find("Offset").find("Value").text)
-                                finded = True
-                                break
-                else : # can not find this name
-                    print("Can not find this name : " + i )
-                    print("Skip it !! ")
-                    targetAct.pop(targetName.index(i)-1)
-                if finded :
-                    break
-            if finded :
-                break
-## Count location
-targetValueINT=[int(i, 16) for i in targetValue]
-location = targetValueINT[0]
-totalCount = []
-totalCount.append(targetValueINT[0])
-if len(targetValueINT) >= 2 :
-    for i in range(1, len(targetValueINT)) :
-        if targetAct[i-1] == "+" :
-            location += targetValueINT[i]
-            totalCount.append(targetAct[i-1])
-        elif targetAct[i-1] == "-" :
-            location -= targetValueINT[i]
-        else :
-            print("Don't supoort act : " + targetAct[i-1] + " !! Only +/- !!" )
-            print("Skip this act and value : " + targetAct[i-1] + ","+ targetValueINT[i])
-            break
-else :
-    location = None
-    print("Don't have enough number !!")
-    print("EXIT !!!")
-    sys.exit()
+location = GetLocation_XMLInfo(tree, targetName, targetAct)
+if not location : sys.exit()
 
 #print(targetName)
 #print(targetValue)
@@ -128,28 +96,30 @@ print("Taget location at :" , hex(location))
 ### Mod bin
 # That user chose {written}.bin
 #BinaryFileName = "U21_892627_32.bin"
-BinaryFileName = Choce_file("bin")
+BinaryFileName = ChoceFile("bin")
 if not BinaryFileName : sys.exit()
 #print(BinaryFileName)
 
 # That user chose {written}.bin
 #WriteDataFileName = "write_Data.bin"
-WriteDataFileString = "Input 1 to use write_data_factory_default.bin \
-                       or press enter to use write_data.bin which can modify." 
-WriteDataFileName = input(WriteDataFileString) or 0
+writeDataFileString = "Input 1 to use write_data_factory_default.bin" \
+                    + "or press enter to use write_data.bin which can modify." 
+WriteDataFileName = input(writeDataFileString) or 0
 while WriteDataFileName not in {0,1} :
     print("Not legal input !!!")
-    writeDataFileName = input(WriteDataFileString) or 0
-writeDataFileName = "write_data.bin" if writeDataFileName == 0 else "write_data_factory_default"
+    WriteDataFileName = input(writeDataFileString) or 0
+WriteDataFileName = "write_data.bin" if WriteDataFileName == 0 else "write_data_factory_default"
 
-if writeDataFileName == "write_data.bin" :
-    ModifyWriteBin(WriteDataFileName)
+# if can modi write_data.bin
+if WriteDataFileName == "write_data.bin" :
+    ModifyWriteBin(WriteDataFileName, argumentDict)
 
 #maybe user input BinaryFileName
 with open(WriteDataFileName, "rb") as writeData :
     print("Opened Input-Data name : " + WriteDataFileName )
     data = writeData.read().split()    
 
+#copy _ori.bin and write data to .bin
 shutil.copy2(BinaryFileName, BinaryFileName[:-4]+"_ori"+BinaryFileName[-4:])
 print("Created _ori.bin ")
 with open(BinaryFileName, "rb+") as binaryFile :
@@ -159,3 +129,4 @@ with open(BinaryFileName, "rb+") as binaryFile :
     #BinaryFile.seek(location)
     for i in data :
         binaryFile.write(i)
+print("Write done !")

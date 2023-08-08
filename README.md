@@ -18,10 +18,11 @@ modify bin with location recorded by xml
 4. Read write_data.bin which will replace 
    1. User can input 1 to choice other write_data_factory_default.bin
       otherwise default write_data.bin
-   2. ***FF*** User can input manually to modify CT/MAC/ForceNetBoot/counter/timer otherwise default 11002200...EE00/FF..FF/1/5/2
-   3. Format : \x00\x00\..\x07 in one line
-   4. ***FF*** Support other input format
-
+   2. User can input manually to modify when execution CT/MAC/ForceNetBoot/counter/timer otherwise default 11002200...EE00/FF..FF/1/5/2
+   3. User can also modify by command line use parameters
+   4. Format for 4-2: \x00\x00\..\x07 in one line
+   5. Format for 4-3: number of non-spaced strings from 0-9 and A-F
+   6. ***FF*** Support other input format
 5. Write date to {Platform_version}.bin
    1. Copy {Platform_version}.bin and rename {Platform_version}_ori.bin then progrm will modify in {Platform_version}.bin
 

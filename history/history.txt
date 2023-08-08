@@ -1,3 +1,9 @@
+v2 2023-08-08
+-------------
+1.Add function 4-2 user can input manually to modify when execution
+2.Add function 4-3 user can also modify by command line use parameters
+3.Divide different function into different .py to make the process more streamlined
+
 v1 2023-08-01
 -------------
 1.Base function

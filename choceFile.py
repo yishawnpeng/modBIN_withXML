@@ -1,7 +1,7 @@
 import os                                   # operate file
 import re                                   # find file
 
-def Choce_file(file_type) : # type : xml / bin
+def ChoceFile(file_type) : # type : xml / bin
     returnName = None
     fatherDir = os.getcwd()
     allDir = os.listdir(fatherDir)
