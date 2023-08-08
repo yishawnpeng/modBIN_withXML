@@ -43,6 +43,8 @@ For more history information, please reference /history/HISTORY.txt
 
 > Note: Step 1. and 2. can input manully after step 3.
 
+> Note: Use ```modbin_withxml.py -h``` if you need more infomateion for function 4-3
+
 ## Contributing
 If you would like to contribute to this project, please follow these steps:
  1. Fork the repository
