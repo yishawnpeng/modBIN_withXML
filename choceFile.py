@@ -7,12 +7,14 @@ def ChoceFile(file_type) : # type : xml / bin
     allDir = os.listdir(fatherDir)
     if file_type == "bin" :
         fileNameList = re.compile("[^write].*\." + file_type)
+    elif file_type == "write" :
+        fileNameList = re.compile("[write].*\.bin" )
     else :
         fileNameList = re.compile(".*\." + file_type)
     fileNameList = list( filter( fileNameList.match, allDir ) )
 
     if len(fileNameList) >= 2 : 
-        print("Finded multy ." + file_type + " : ", fileNameList )
+        #print("Finded multy ." + file_type + " : ", fileNameList )
         fileNameList = ["("+str(i+1)+")"+fileNameList[i] for i in range(len(fileNameList))]
         fileNameString = ""
         for i in fileNameList : fileNameString += i + " "

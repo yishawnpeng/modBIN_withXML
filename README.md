@@ -22,7 +22,7 @@ modify bin with location recorded by xml
    3. User can also modify by command line use parameters
    4. Format for 4-2: \x00\x00\..\x07 in one line
    5. Format for 4-3: number of non-spaced strings from 0-9 and A-F
-   6. ***FF*** Support other input format
+
 5. Write date to {Platform_version}.bin
    1. Copy {Platform_version}.bin and rename {Platform_version}_ori.bin then progrm will modify in {Platform_version}.bin
 
@@ -36,10 +36,11 @@ For more history information, please reference /history/HISTORY.txt
 
 ## How to use
 1. Modify target.txt or keep default
-2. Modify Write_Data.bin or keep default
-3. Run ```modbin_withxml.py``` in cmd window
-4. Input which .xml you want to find or press enter to use first finded
-5. Input which .bin you want to modify or press enter to use first finded
+2. Modify write_data.bin or keep default
+3. Put your .xml and .bin in the same folder
+4. Run ```modbin_withxml.py``` in cmd window
+5. Input which .xml you want to find or press enter to use first finded
+6. Input which .bin you want to modify or press enter to use first finded
 
 > Note: Step 1. and 2. can input manully after step 3.
 

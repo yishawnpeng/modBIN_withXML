@@ -35,7 +35,10 @@ def PrintWriteInfoSize(WriteDataFileName) :
 
 
 def ModifyWriteBin(WriteDataFileName, argumentDict) :
-    if input("Input any key if you want to modify data \n or only enter to skip: ") :
+    if list(argumentDict.values()).count(None) == len(argumentDict.keys()) :
+        print("You can't manually modify the binary" \
+              +"when you run this program with additional parameters.")
+    elif input("Input any key if you want to modify data or only enter to skip: ") :
         whichOne = "\n"
         while whichOne :
             whichOne = input(userInputStr)
@@ -54,12 +57,12 @@ def ModifyWriteBin(WriteDataFileName, argumentDict) :
             elif whichOne == "2" :
                 temp = input(counterHelpStr)
                 if checkAll(temp, 4) :
-                    argumentDict["Counter"] = temp
+                    argumentDict["Counter"] = temp[2:]+temp[0:2]
                 else : print("Input Counter format illegal !\n")
             elif whichOne == "3" :
                 temp = input(periodHelpStr)
                 if checkAll(temp, 4) :
-                    argumentDict["Period"] = temp
+                    argumentDict["Period"] = temp[2:]+temp[0:2]
                 else : print("Input Period format illegal !\n")
             else :
                 print("!!Not legal input options !!\n")

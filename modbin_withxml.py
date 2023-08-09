@@ -30,7 +30,7 @@
 # 
 # 
 # Share point
-# xxx\CMIT_BIOS\
+# xxx\CMIT_BIOS\Tools\modbin_withxml\modBIN_withXML_7z_v{X}.7z
 # GitHub 
 # https://github.com/yishawnpeng/modBIN_withXML
 #
@@ -102,13 +102,8 @@ if not BinaryFileName : sys.exit()
 
 # That user chose {written}.bin
 #WriteDataFileName = "write_Data.bin"
-writeDataFileString = "Input 1 to use write_data_factory_default.bin" \
-                    + "or press enter to use write_data.bin which can modify." 
-WriteDataFileName = input(writeDataFileString) or 0
-while WriteDataFileName not in {0,1} :
-    print("Not legal input !!!")
-    WriteDataFileName = input(writeDataFileString) or 0
-WriteDataFileName = "write_data.bin" if WriteDataFileName == 0 else "write_data_factory_default"
+WriteDataFileName = ChoceFile("write")
+if not WriteDataFileName : sys.exit()
 
 # if can modi write_data.bin
 if WriteDataFileName == "write_data.bin" :
@@ -117,7 +112,7 @@ if WriteDataFileName == "write_data.bin" :
 #maybe user input BinaryFileName
 with open(WriteDataFileName, "rb") as writeData :
     print("Opened Input-Data name : " + WriteDataFileName )
-    data = writeData.read().split()    
+    data = writeData.read()
 
 #copy _ori.bin and write data to .bin
 shutil.copy2(BinaryFileName, BinaryFileName[:-4]+"_ori"+BinaryFileName[-4:])
@@ -127,6 +122,9 @@ with open(BinaryFileName, "rb+") as binaryFile :
     binaryFile.seek(location)
     #print(BinaryFile.read(1))
     #BinaryFile.seek(location)
-    for i in data :
-        binaryFile.write(i)
-print("Write done !")
+    # for i in data :
+    #     binaryFile.write(i)
+    #     print(i)
+    binaryFile.write(data)
+
+print("Write Complete !")
