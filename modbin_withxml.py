@@ -22,7 +22,7 @@
 #  (3) Format for 4-1: \x00\x00\..\x07 in one line
 #  (4) Format for 4-2: number of non-spaced strings from 0-9 and A-F
 #  (5) If use arguments -y it will automatically confirm.
-#  (6) Please note that the BIN file will be modified if the arguments y and 
+#  (6) Please note that the .bin file will be modified if the arguments y and 
 #      the four modification arguments m, s, c, and p are used together
 # 5.Write date to {Platform_version}.bin
 #  (1)Copy {Platform_version}.bin and rename {Platform_version}_ori.bin
