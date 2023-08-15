@@ -31,6 +31,7 @@
 # 
 # Share point
 # xxx\CMIT_BIOS\Tools\modbin_withxml\modBIN_withXML_7z_v{X}.7z
+# xxx\CMIT_BIOS\Tools\modbin_withxml\M1Inject_7z_v{X}.7z
 # GitHub 
 # https://github.com/yishawnpeng/modBIN_withXML
 #

@@ -38,7 +38,7 @@ For more history information, please reference /history/HISTORY.txt
 1. Modify target.txt if you want to change the location of the bin in the calculation result of .xml or just keep default
 2. Modify write_data_default.bin or keep default
 3. Put your .xml and .bin in the same folder
-4. Run ```M1Inject.exe``` in cmd window and attach the arguments you want to use.
+4. Run ```modBIN_withXML.py``` or ```M1Inject.exe``` in cmd window and attach the arguments you want to use.
 5. Input the corresponding information based on the program's feedback.
 
 > Note: Use ```-h``` if you need more infomateion for arguments 
