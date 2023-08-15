@@ -20,7 +20,7 @@ argumentDict={"MAC":None,"SBCT":None,"Counter":None,"Period":None}
 
 userInputData = ["("+str(i)+")"+j for i,j in zip(range(len(argumentDict)),argumentDict)]
 userInputStr = "Which number you want to modify \n"+ "\n".join(userInputData) \
-                + "\n(Enter) to exit :"
+                + "\n(Enter) to exit : "
 
 def PrintWriteInfoSize(WriteDataFileName) :
     print("In "+WriteDataFileName+" :")
@@ -34,39 +34,40 @@ def PrintWriteInfoSize(WriteDataFileName) :
     print("\t       end   at : "+str(counterEnd+binAreaLen["Period"]))
 
 
-def ModifyWriteBin(WriteDataFileName, argumentDict) :
-    if list(argumentDict.values()).count(None) == len(argumentDict.keys()) :
-        print("You can't manually modify the binary" \
-              +"when you run this program with additional parameters.")
-    elif input("Input any key if you want to modify data or only enter to skip: ") :
+def ModifyWriteBin_manul(WriteDataFileName, argumentDict) :
+    reallyMod = input("Input any key if you want to modify data or only enter to skip : ") 
+    if reallyMod != "" :
         whichOne = "\n"
         while whichOne :
-            whichOne = input(userInputStr)
-            if whichOne == "\n" :
+            whichOne = input(userInputStr) 
+            if whichOne == "" :
                 break
             elif whichOne == "0" :
-                temp = input(macHelpStr)
+                temp = input(macHelpStr[:-1]+" : ")
                 if checkAll(temp, 12) :
                     argumentDict["MAC"] = temp
                 else : print("Input MAC format illegal !\n")
             elif whichOne == "1" :
-                temp = input(sbctHelpStr)
+                temp = input(sbctHelpStr[:-1]+" : ")
                 if checkAll(temp, 30) : 
-                    argumentDict["SBCT"] = temp
+                    argumentDict["SBCT"] = "".join([temp[i:i+2]+"00"for i in range(0,len(temp),2)])
                 else : print("Input SBCT format illegal !\n")
             elif whichOne == "2" :
-                temp = input(counterHelpStr)
+                temp = input(counterHelpStr[:-1]+" : ")
                 if checkAll(temp, 4) :
                     argumentDict["Counter"] = temp[2:]+temp[0:2]
                 else : print("Input Counter format illegal !\n")
             elif whichOne == "3" :
-                temp = input(periodHelpStr)
+                temp = input(periodHelpStr[:-1]+" : ")
                 if checkAll(temp, 4) :
                     argumentDict["Period"] = temp[2:]+temp[0:2]
                 else : print("Input Period format illegal !\n")
             else :
                 print("!!Not legal input options !!\n")
+        
+        ModifyWriteBin(WriteDataFileName, argumentDict)
 
+def ModifyWriteBin(WriteDataFileName, argumentDict):
     #PrintWriteInfoSize(WriteDataFileName)
     with open(WriteDataFileName, "rb+") as writeData :
         print("Opened Modify Input-Data name : " + WriteDataFileName )

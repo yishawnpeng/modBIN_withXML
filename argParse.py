@@ -1,35 +1,38 @@
 import argparse
 
-version = "2"
+version = "4"
 macHelpStr = "Input MAC you want. Enter 12 non-spaced strings from 0-9 and A-F."
 sbctHelpStr = "Input SystemBordCT you want. Enter 30 non-spaced strings from 0-9 and A-F."
 counterHelpStr = "Input Counter you want. Enter 4 non-spaced strings from 0-9 and A-F."
 periodHelpStr = counterHelpStr
+autoHelpStr = "Automatically confirm all actions without requiring manual confirmation. \
+Please note that the BIN file will be modified if the parameter Y and the four modification parameters m, s, c, and p are used together."
 
 cheeckRange =["0","1","2","3","4","5","6","7","8","9",\
               "a","b","c","d","e","f","A","B","C","D","E","F"]
 
 def checkAll(string, requestLen) :
-    #print(requestLen)
-    checklen = 0
-    for i in string :
-        checklen += 1
-        if i not in cheeckRange :
-            #print(cheeckRange)
-            return False
-    if checklen != requestLen :
+    if len(string) != requestLen :
         return False
+    for i in string :
+        if i not in cheeckRange :
+            return False
     return True
 
 def argParse_contant(argumentDict):
     exitFlag = False
+    autoUpdate = False
     parser = argparse.ArgumentParser(prog='modbin_withxml.py', description='Tutorial')
     parser.add_argument("-v", "--version", action="version", version=version)
+    parser.add_argument("-y", "--yes", action="store_true",help=autoHelpStr )
     parser.add_argument("-m", "--mac", help=macHelpStr )
     parser.add_argument("-s", "--sbct", help=sbctHelpStr )
     parser.add_argument("-c", "--counter", help=counterHelpStr )
     parser.add_argument("-p", "--period", help=periodHelpStr )
     args = parser.parse_args()
+    if args.yes :
+        autoUpdate = True
+
     if args.mac:
         argumentDict["MAC"] = args.mac
         if not checkAll(args.mac, 12) :
@@ -38,7 +41,6 @@ def argParse_contant(argumentDict):
         
     if args.sbct:
         argumentDict["SBCT"] = "".join([args.sbct[i:i+2]+"00"for i in range(0,len(args.sbct),2)])
-        print(argumentDict["SBCT"])
         if not checkAll(args.sbct, 30) :
             print("Input SystemBordCT format illegal !")
             exitFlag = True
@@ -56,5 +58,5 @@ def argParse_contant(argumentDict):
             exitFlag = True
 
     if exitFlag :
-        return False
-    return True
+        return autoUpdate, False
+    return autoUpdate, True

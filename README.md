@@ -16,12 +16,12 @@ modify bin with location recorded by xml
 3. Count the value and print it to double check
 
 4. Read write_data.bin which will replace 
-   1. User can input 1 to choice other write_data_factory_default.bin
-      otherwise default write_data.bin
-   2. User can input manually to modify when execution CT/MAC/ForceNetBoot/counter/timer otherwise default 11002200...EE00/FF..FF/1/5/2
-   3. User can also modify by command line use parameters
-   4. Format for 4-2: \x00\x00\..\x07 in one line
-   5. Format for 4-3: number of non-spaced strings from 0-9 and A-F
+   1. User can input manually to modify when execution CT/MAC/ForceNetBoot/counter/timer otherwise default 11002200...EE00/FF..FF/1/5/2
+   2. User can also modify by command line use parameters
+   3. Format for 4-1: \x00\x00\..\x07 in one line
+   4. Format for 4-2: number of non-spaced strings from 0-9 and A-F
+   5. If use arguments -y it will automatically confirm.
+   6. Please note that the BIN file will be modified if the arguments y and the four modification arguments m, s, c, and p are used together
 
 5. Write date to {Platform_version}.bin
    1. Copy {Platform_version}.bin and rename {Platform_version}_ori.bin then progrm will modify in {Platform_version}.bin
@@ -35,16 +35,13 @@ modify bin with location recorded by xml
 For more history information, please reference /history/HISTORY.txt
 
 ## How to use
-1. Modify target.txt or keep default
-2. Modify write_data.bin or keep default
+1. Modify target.txt if you want to change the location of the bin in the calculation result of .xml or just keep default
+2. Modify write_data_default.bin or keep default
 3. Put your .xml and .bin in the same folder
-4. Run ```modbin_withxml.py``` in cmd window
-5. Input which .xml you want to find or press enter to use first finded
-6. Input which .bin you want to modify or press enter to use first finded
+4. Run ```M1Inject.exe``` in cmd window and attach the arguments you want to use.
+5. Input the corresponding information based on the program's feedback.
 
-> Note: Step 1. and 2. can input manully after step 3.
-
-> Note: Use ```modbin_withxml.py -h``` if you need more infomateion for function 4-3
+> Note: Use ```-h``` if you need more infomateion for arguments 
 
 ## Contributing
 If you would like to contribute to this project, please follow these steps:
