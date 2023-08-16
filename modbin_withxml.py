@@ -21,8 +21,8 @@
 #  (2) User can also modify by command line use parameters
 #  (3) Format for 4-1: \x00\x00\..\x07 in one line
 #  (4) Format for 4-2: number of non-spaced strings from 0-9 and A-F
-#  (5) If use arguments -y it will automatically confirm.
-#  (6) Please note that the .bin file will be modified if the arguments y and 
+#  (5) If use argument -y it will automatically confirm.
+#  (6) Please note that the .bin file will be modified if the argument y and 
 #      the four modification arguments m, s, c, and p are used together
 # 5.Write date to {Platform_version}.bin
 #  (1)Copy {Platform_version}.bin and rename {Platform_version}_ori.bin
@@ -30,8 +30,8 @@
 # 
 # 
 # Share point
-# xxx\CMIT_BIOS\Tools\modbin_withxml\modBIN_withXML_7z_v{X}.7z
-# xxx\CMIT_BIOS\Tools\modbin_withxml\M1Inject_7z_v{X}.7z
+# xxx\CMIT_BIOS\Tools\modbin_withxml(M1Inject)\modBIN_withXML_7z_v{before v3}.7z
+# xxx\CMIT_BIOS\Tools\modbin_withxml(M1Inject)\modBIN_withXML(M1Inject)_v4.7z
 # GitHub 
 # https://github.com/yishawnpeng/modBIN_withXML
 #

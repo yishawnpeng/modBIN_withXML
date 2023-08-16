@@ -6,7 +6,7 @@ sbctHelpStr = "Input SystemBordCT you want. Enter 30 non-spaced strings from 0-9
 counterHelpStr = "Input Counter you want. Enter 4 non-spaced strings from 0-9 and A-F."
 periodHelpStr = counterHelpStr
 autoHelpStr = "Automatically confirm all actions without requiring manual confirmation. \
-Please note that the BIN file will be modified if the parameter Y and the four modification parameters m, s, c, and p are used together."
+Please note that the .bin file will be modified if the argument y and the four modification parameters m, s, c, and p are used together."
 
 cheeckRange =["0","1","2","3","4","5","6","7","8","9",\
               "a","b","c","d","e","f","A","B","C","D","E","F"]

@@ -4,6 +4,8 @@
 4. Run ```modBIN_withXML.py``` or ```M1Inject.exe``` in cmd window and attach the arguments you want to use.
 5. Input the corresponding information based on the program's feedback.
 
-Note: Use ```-h``` if you need more infomateion for arguments 
+Note: Only use the argument -y is great
 
-Note: The .bin file will be modified if the arguments y and the four modification arguments m, s, c, and p are used together
+Note: Use ```-h``` if you need more information for arguments 
+
+Note: Do NOT modify the data in the folder keep_default_bin, in case the wrong .bin file can be restored manually
